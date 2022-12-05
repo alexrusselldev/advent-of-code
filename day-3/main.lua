@@ -41,11 +41,19 @@ function FindIntersections (parsedInput)
     local intersections = {}
     for _, backpack in pairs(parsedInput) do
         local done = false
+        local holding = {}
         for _, firstItem in pairs(backpack[1]) do
+            for _, secondItem in pairs(backpack[2]) do
+                if firstItem == secondItem then
+                    table.insert(holding, firstItem)
+                end
+            end
+        end
+        for _, firstItem in pairs(holding) do
             if done == true then
                 break
             end
-            for _, secondItem in pairs(backpack[2]) do
+            for _, secondItem in pairs(backpack[3]) do
                 if firstItem == secondItem then
                     table.insert(intersections, firstItem)
                     done = true
