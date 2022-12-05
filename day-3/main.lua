@@ -5,20 +5,22 @@ end
 
 function ParseInput (rawInput)
     local result = {}
-    local working = {{},{}}
+    local working = {{}, {}, {}}
     io.input(rawInput)
+    local insert = 1
     local lines = rawInput:lines()
     for line in lines do
         local length = string.len(line)
         for i = 1, length do
-            if i < (length / 2) + 1 then
-                table.insert(working[1], string.sub(line, i, i))
-            else
-                table.insert(working[2], string.sub(line, i, i))
-            end
+            table.insert(working[insert], string.sub(line, i, i))
         end
-        table.insert(result, working)
-        working = {{},{}}
+        if insert == 3 then
+            table.insert(result, working)
+            working = {{}, {}, {}}
+            insert = 1
+        else
+            insert = insert + 1
+        end
     end
     return result
 end
