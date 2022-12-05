@@ -14,5 +14,27 @@ function parseInput(rawInput) {
   return parsedRounds;
 }
 
+const plays = {
+  X: {
+    // rock
+    default: 1,
+    A: 3, // rock
+    B: 0, // paper
+    C: 6, // scissors
+  },
+  Y: {
+    // paper
+    A: 6, // rock
+    B: 3, // paper
+    C: 0, // scissors
+  },
+  Z: {
+    // scissors
+    A: 0, // rock
+    B: 6, // paper
+    C: 3, // scissors
+  },
+};
+
 const rawInput = await loadInput();
 const parsedInput = parseInput(rawInput);
