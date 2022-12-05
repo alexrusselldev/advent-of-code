@@ -38,10 +38,16 @@ end
 function FindIntersections (parsedInput)
     local intersections = {}
     for _, backpack in pairs(parsedInput) do
+        local done = false
         for _, firstItem in pairs(backpack[1]) do
+            if done == true then
+                break
+            end
             for _, secondItem in pairs(backpack[2]) do
                 if firstItem == secondItem then
                     table.insert(intersections, firstItem)
+                    done = true
+                    break
                 end
             end
         end
