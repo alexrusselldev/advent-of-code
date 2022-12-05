@@ -24,12 +24,14 @@ const plays = {
   },
   Y: {
     // paper
+    default: 2,
     A: 6, // rock
     B: 3, // paper
     C: 0, // scissors
   },
   Z: {
     // scissors
+    default: 3,
     A: 0, // rock
     B: 6, // paper
     C: 3, // scissors
