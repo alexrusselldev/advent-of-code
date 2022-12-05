@@ -37,5 +37,18 @@ function GetItemPrio (item)
     return 0
 end
 
+function FindIntersections (ParsedInput)
+    local intersections = {}
+    for backpack in ParsedInput do
+        for firstItem in backpack[1] do
+            for secondItem in backpack[2] do
+                if firstItem == secondItem then
+                    table.insert(intersections, firstItem)
+                end
+            end
+        end
+    end
+end
+
 RawInput = LoadInput()
 ParsedInput = ParseInput(RawInput)
