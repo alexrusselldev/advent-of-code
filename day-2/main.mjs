@@ -38,5 +38,19 @@ const plays = {
   },
 };
 
+function calculatePlays(parsedInput) {
+  let score = 0;
+  for (const round of parsedInput) {
+    console.log(round);
+    console.log(round[1]);
+    console.log(plays[round[1]][round[0]]);
+    score += plays[round[1]].default;
+    score += plays[round[1]][round[0]];
+  }
+  return score;
+}
+
 const rawInput = await loadInput();
 const parsedInput = parseInput(rawInput);
+const totalScore = calculatePlays(parsedInput);
+console.log(totalScore);
