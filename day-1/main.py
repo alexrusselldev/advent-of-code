@@ -1,5 +1,5 @@
 def getInput():
-    with open('input') as inputFile:
+    with open('input.txt') as inputFile:
         return inputFile.readlines()
 
 def parseInput(rawInput):
