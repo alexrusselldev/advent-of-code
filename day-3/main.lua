@@ -51,5 +51,14 @@ function FindIntersections (parsedInput)
     return intersections
 end
 
+function SumIntersections (intersections)
+    local result = 0
+    for _, intersection in pairs(intersections) do
+        result = result + GetItemPrio(intersection)
+    end
+    return result
+end
+
 RawInput = LoadInput()
 ParsedInput = ParseInput(RawInput)
+Intersections = FindIntersections(ParsedInput)
