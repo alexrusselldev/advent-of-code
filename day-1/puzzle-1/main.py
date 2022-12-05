@@ -36,5 +36,6 @@ def main():
     rawInput = getInput()
     parsedInput = parseInput(rawInput)
     summedInput = sumEach(parsedInput)
+    print(max(summedInput))
 
 main()
