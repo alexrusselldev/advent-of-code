@@ -16,8 +16,25 @@ def parseInput(rawInput):
         i = i + 1
     return(finalList)
 
+def sumEach(parsedInput):
+    finalList = []
+    parsedLength = len(parsedInput)
+    parsedi = 0
+    while parsedi < parsedLength:
+        itemLength = len(parsedInput[parsedi])
+        itemi = 0
+        itemSum = 0
+        while itemi < itemLength:
+            itemSum = itemSum + parsedInput[parsedi][itemi]
+            itemi = itemi + 1
+        print(itemSum)
+        finalList.append(itemSum)
+        parsedi = parsedi + 1
+    return finalList
+
 def main():
     rawInput = getInput()
     parsedInput = parseInput(rawInput)
+    summedInput = sumEach(parsedInput)
 
 main()
