@@ -27,7 +27,6 @@ def sumEach(parsedInput):
         while itemi < itemLength:
             itemSum = itemSum + parsedInput[parsedi][itemi]
             itemi = itemi + 1
-        print(itemSum)
         finalList.append(itemSum)
         parsedi = parsedi + 1
     return finalList
