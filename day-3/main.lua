@@ -5,15 +5,24 @@ end
 
 function ParseInput (rawInput)
     local result = {}
+    local working = {{},{}}
     io.input(rawInput)
     local lines = rawInput:lines()
     for line in lines do
         local length = string.len(line)
-        local working = {}
-        table.insert(working, string.sub(line, 1, length / 2))
-        table.insert(working, string.sub(line, (length / 2) + 1, length))
+        for i = 1, length do
+            if i < (length / 2) + 1 then
+                print('working 1', string.sub(line, i, i))
+                table.insert(working[1], string.sub(line, i, i))
+            else
+                print('working 2', string.sub(line, i, i))
+                table.insert(working[2], string.sub(line, i, i))
+            end
+        end
         table.insert(result, working)
+        working = {{},{}}
     end
+    return result
 end
 
 function GetItemPrio (item)
