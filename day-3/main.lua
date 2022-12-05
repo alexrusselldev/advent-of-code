@@ -48,6 +48,7 @@ function FindIntersections (parsedInput)
             end
         end
     end
+    return intersections
 end
 
 RawInput = LoadInput()
