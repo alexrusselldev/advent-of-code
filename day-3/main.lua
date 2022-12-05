@@ -12,10 +12,8 @@ function ParseInput (rawInput)
         local length = string.len(line)
         for i = 1, length do
             if i < (length / 2) + 1 then
-                print('working 1', string.sub(line, i, i))
                 table.insert(working[1], string.sub(line, i, i))
             else
-                print('working 2', string.sub(line, i, i))
                 table.insert(working[2], string.sub(line, i, i))
             end
         end
@@ -62,3 +60,4 @@ end
 RawInput = LoadInput()
 ParsedInput = ParseInput(RawInput)
 Intersections = FindIntersections(ParsedInput)
+print(SumIntersections(Intersections))
