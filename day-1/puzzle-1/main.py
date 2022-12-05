@@ -31,6 +31,22 @@ def sumEach(parsedInput):
         parsedi = parsedi + 1
     return finalList
 
+def sortSummed(summedInput):
+    # attempting a bubble sort algorithm
+    inputList = summedInput
+    inputLength = len(inputList)
+    i = 0
+    sorted = False
+    while sorted == False:
+        sorted = True
+        i = 0
+        while i < inputLength - 1:
+            if inputList[i] < inputList[i + 1]:
+                inputList[i], inputList[i + 1] = inputList[i + 1], inputList[i]
+                sorted = False
+            i = i + 1
+    return inputList
+
 def main():
     rawInput = getInput()
     parsedInput = parseInput(rawInput)
