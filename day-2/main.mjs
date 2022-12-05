@@ -16,25 +16,25 @@ function parseInput(rawInput) {
 
 const plays = {
   X: {
-    // rock
-    default: 1,
+    // lose
+    default: 0,
     A: 3, // rock
-    B: 0, // paper
-    C: 6, // scissors
+    B: 1, // paper
+    C: 2, // scissors
   },
   Y: {
-    // paper
-    default: 2,
-    A: 6, // rock
-    B: 3, // paper
-    C: 0, // scissors
+    // draw
+    default: 3,
+    A: 1, // rock
+    B: 2, // paper
+    C: 3, // scissors
   },
   Z: {
-    // scissors
-    default: 3,
-    A: 0, // rock
-    B: 6, // paper
-    C: 3, // scissors
+    // win
+    default: 6,
+    A: 2, // rock
+    B: 3, // paper
+    C: 1, // scissors
   },
 };
 
