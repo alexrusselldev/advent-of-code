@@ -51,6 +51,7 @@ def main():
     rawInput = getInput()
     parsedInput = parseInput(rawInput)
     summedInput = sumEach(parsedInput)
-    print(max(summedInput))
+    sortedInput = sortSummed(summedInput)
+    print(sortedInput[0] + sortedInput[1] + sortedInput[2])
 
 main()
