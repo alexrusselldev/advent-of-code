@@ -6,14 +6,17 @@ function readInput() {
 
 function parseInput($rawInput) {
     $readInput = fread($rawInput, filesize("input.txt"));
-    $parsed = explode("\n", $readInput);
-    foreach ($parsed as $bands => $line) {
+    $firstPass = explode("\n", $readInput);
+    $result = [];
+    foreach ($firstPass as $index => $line) {
         $split = explode(",", $line);
-        foreach ($split as $booty => $entry) {
-            $split[$booty] = explode("-", $entry);
+        $working = [];
+        foreach ($split as $jndex => $entry) {
+            array_push($working, explode("-", $entry));
         }
-        $parsed[$bands] = $split;
+        array_push($result, $working);
     }
+    return $result;
 }
 
 $rawInput = readInput();
