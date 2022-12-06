@@ -19,6 +19,18 @@ function parseInput($rawInput) {
     return $result;
 }
 
+function sumInput($parsedInput){
+    $result = 0;
+    foreach ($parsedInput as $team) {
+        if(($team[0][0] <= $team[1][0] and $team[0][1] >= $team[1][1]) or ($team[0][0] >=  $team[1][0] and $team[0][1] <= $team[1][1])) {
+            $result = $result + 1;
+        }
+    }
+    return $result;
+}
+
 $rawInput = readInput();
 $parsedInput = parseInput($rawInput);
+$summed = sumInput($parsedInput);
+print_r($summed);
 ?> 
